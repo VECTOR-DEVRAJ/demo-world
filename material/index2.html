@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .project {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Name - Projects</h1>
+    </header>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div id="projectList"></div>
+    </section>
+
+    <script>
+        // Sample projects data (replace with your actual data)
+        var projects = [
+            {
+                name: 'Project 1',
+                description: 'Description of Project 1.',
+                technologies: 'HTML, CSS, JavaScript'
+            },
+            {
+                name: 'Project 2',
+                description: 'Description of Project 2.',
+                technologies: 'HTML, CSS, Python, Flask'
+            }
+            // Add more projects as needed
+        ];
+
+        // Function to dynamically generate HTML for projects
+        function displayProjects() {
+            var projectListContainer = document.getElementById('projectList');
+
+            projects.forEach(function(project) {
+                var projectElement = document.createElement('div');
+                projectElement.className = 'project';
+
+                projectElement.innerHTML = `
+                    <h3>${project.name}</h3>
+                    <p>${project.description}</p>
+                    <p>Technologies used: ${project.technologies}</p>
+                `;
+
+                projectListContainer.appendChild(projectElement);
+            });
+        }
+
+        // Call the function to display projects
+        displayProjects();
+    </script>
+
+</body>
+</html>
